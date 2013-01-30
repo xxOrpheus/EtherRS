@@ -28,25 +28,73 @@ class SQL extends \Server\Server {
 	 *
 	 */
 	public function getCount($table, array $columns, array $values) {
+		try {
+			if($this->conn == false) {
+				throw new \Exception(__METHOD__ . ': No SQL connection');
+			}
+			if(count($columns) != count($values)) {
+				throw new \Exception(__METHOD__ . ': Unmatching column and value arrays');
+			}
+			$sql = '';
+			foreach($columns as $column) {
+				$sql .= '`' . $column . '` = ? AND ';
+			}
+			$sql = substr($sql, 0, -5);
+			$sql = 'SELECT COUNT(*) as `rows` FROM ' . $table . ' WHERE ' . $sql;
+			$query = $this->conn->prepare($sql);
+			$query->execute($values);
+			$rs = $query->fetch(\PDO::FETCH_ASSOC);
+			
+			return $rs['rows'];
+		} catch(\PDOException $e) {
+			$this->log($e->getMessage());
+			return -1;
+		}
+	}
+	
+	/**
+	 *
+	 * Insert data to the database
+	 *
+	 * @param string $table   The table to insert into.
+	 * @param array  $columns The column values
+	 * @param array  $values  The values
+	 *
+	 * @return int
+	 *
+	 */
+	public function insert($table, array $columns, array $values) {
 		if($this->conn == false) {
 			throw new \Exception(__METHOD__ . ': No SQL connection');
 		}
+
 		if(count($columns) != count($values)) {
 			throw new \Exception(__METHOD__ . ': Unmatching column and value arrays');
 		}
-		$sql = '';
-		foreach($columns as $column) {
-			$sql .= '`' . $column . '` = ? AND ';
+
+		try {
+			$sql = '';
+			foreach($columns as $column) {
+				$sql .= '`'.$column.'`, ';
+			}
+			$sql = substr($sql, 0, -2);
+			$sql = 'INSERT INTO ' . $table . ' ('.$sql.') VALUES(';
+			$columnCount = count($columns);
+			for($i = 0; $i < $columnCount; $i++) {
+				$sql .= '?, ';
+			}
+			$sql = substr($sql, 0, -2);
+			$sql .= ')';
+			var_dump($sql);
+			$query = $this->conn->prepare($sql);
+			$exec = $query->execute($values);
+			return $exec == true ? 1 : -1;
+		} catch(\PDOException $e) {
+			$this->log($e->getMessage());
+			return -1;
 		}
-		$sql = substr($sql, 0, -5);
-		$sql = 'SELECT COUNT(*) as `rows` FROM ' . $table . ' WHERE ' . $sql;
-		$query = $this->conn->prepare($sql);
-		$query->execute($values);
-		$rs = $query->fetch(\PDO::FETCH_ASSOC);
-		
-		return $rs['rows'];
 	}
-	
+
 	/**
 	 *
 	 * Get the PDO instance

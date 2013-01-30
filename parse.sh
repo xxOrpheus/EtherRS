@@ -1,6 +1,2 @@
 #!/bin/bash
-FILES=/var/www/EtherRS/*.php
-for f in $FILES
-do
-  php -l "$f"
-done
+find . -name \*.php -exec php -l "{}" \;

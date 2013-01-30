@@ -17,6 +17,15 @@ class PlayerHandler extends \Server\Server {
 	public function __construct() {}
 
 	/**
+	 *
+	 * In the future, this will save all online players.
+	 *
+	 */
+	public function save() {
+		return false;
+	}
+
+	/**
 	 * 
 	 * Add a client to the handler
 	 * 

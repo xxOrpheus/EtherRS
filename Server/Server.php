@@ -179,15 +179,20 @@ class Server {
 
 	/**
 	 *
-	 * Destructor. Issue clean up and __onUnload handler
+	 * Stop the server.
 	 *
 	 */
-	public function __destruct() {
-		$this->handleModules('__onUnload', $this);
-		$this->log('---------------------------');
-		if($this->socket) {
-			socket_close($this->socket);
-		}
+	public function stop() {
+		$this->handleModules('__onStop', $this);
+		$this->log('Server stopping...');
+		$this->playerHandler->save();
+
+		unset($this->playerHandler);
+		unset($this->sql);
+		unset($this->socket);
+		socket_close($this->server);
+
+		exit('Server stopped.' . PHP_EOL);
 	}
 }
 ?>

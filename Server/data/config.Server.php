@@ -8,4 +8,4 @@ define('CYCLE_TIME', 600);
 define('SQL_HOST', 'localhost');
 define('SQL_DB', 'EtherRS');
 define('SQL_USER', 'root');
-define('SQL_PASS', '');
+define('SQL_PASS', 'ohlol223');

@@ -1,0 +1,222 @@
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+2SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+2SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+2SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+2SQLSTATE[42000] [1049] Unknown database 'EtherRS'
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] lol has logged in from 127.0.0.1:33606
+[SERVER] lol has logged in from 127.0.0.1:33607
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] dongs has logged in from 127.0.0.1:33890
+[SERVER] dongs has logged in from 127.0.0.1:33891
+[SERVER] dongs has logged in from 127.0.0.1:33892
+[SERVER] dongs has logged in from 127.0.0.1:33893
+[SERVER] dongs has logged in from 127.0.0.1:33894
+[SERVER] dongs has logged in from 127.0.0.1:33895
+[SERVER] dongs has logged in from 127.0.0.1:33896
+[SERVER] dongs has logged in from 127.0.0.1:33897
+[SERVER] dongs has logged in from 127.0.0.1:33898
+[SERVER] dongs has logged in from 127.0.0.1:33899
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"username", "password") VALUES('dongs', 'dongs')' at line 1
+[SERVER] dongs has logged in from 127.0.0.1:33982
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'EtherRS.player' doesn't exist
+[SERVER] dongs has logged in from 127.0.0.1:33986
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] dongs has logged in from 127.0.0.1:33992
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:33993
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:33994
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:33995
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:33996
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:33997
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:33998
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:33999
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34000
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34001
+[SERVER] Closing dongs's connection
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'dongs' for key 'username'
+[SERVER] dongs has logged in from 127.0.0.1:34016
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] dongs has logged in from 127.0.0.1:34052
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34053
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34054
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34055
+[SERVER] Closing dongs's connection
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] stop has logged in from 127.0.0.1:34058
+[SERVER] Closing stop's connection
+[SERVER] stop has logged in from 127.0.0.1:34059
+[SERVER] Closing stop's connection
+[SERVER] stop has logged in from 127.0.0.1:34060
+[SERVER] Closing stop's connection
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] Server stopping...
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] Server stopping...
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] Server stopping...
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
+[SERVER] ---------------------------
