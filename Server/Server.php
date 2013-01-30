@@ -18,6 +18,7 @@ require 'Client/Player.php';
 require 'Network/SQL.php';
 require 'Network/Socket.php';
 require 'Network/Stream.php';
+require 'Misc.php';
 
 class Server {
 	protected $server, $bytes, $raw;

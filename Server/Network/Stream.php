@@ -193,6 +193,13 @@ Class Stream {
         return $this;
     }
 
+    public function putBytesReverse($i) {
+        $arrayLen = count($this->array);
+        for($i = $arrayLen - 1; $i >= 0; $i--) {
+            putByte($this->array[$i]);
+        }
+    }
+
     public function putInt($i) {
         $this->array[$this->currentOffset++] = $this->toByte($i >> 24);
         $this->array[$this->currentOffset++] = $this->toByte($i >> 16);
@@ -306,7 +313,7 @@ Class Stream {
     }
 
     public function putString($s) {
-        $max = currentOffset + strlen($s);
+        $max = $this->currentOffset + strlen($s);
         for($i = $this->currentOffset; $i < $max; $i++) {
             $this->array[$this->currentOffset + $i] = $s[$i];
         }

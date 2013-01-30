@@ -21,13 +21,18 @@ class Player extends \Server\Server {
 	private $player_handler;
 	protected $updater;
 
+	public $updateRequired = true, $chatUpdateRequired = true, $appearanceUpdateRequired = true, $needsPlacement = true, $resetMovementQueue = true;
+	public $staffRights = 0, $chatColor, $chatEffects, $chatText;
+	public $appearance, $colors, $inventory, $inventoryN, $skills, $experience, $equipment, $equipmentN;
+
+
 	protected $socket;
 
 	protected $encryptor, $decryptor;
 
 	public function __construct($socket, $active_session, \Server\Server $server, \Server\Network\SQL $sql, PlayerHandler $player_handler) {
 		$this->connection = $socket;
-		$this->session = $active_session;
+		$this->session = $active_session + 1;
 		$this->server = $server;
 		$this->sql = $sql;
 
@@ -35,8 +40,9 @@ class Player extends \Server\Server {
 		$this->inStream = new \Server\Network\Stream();
 
 		$this->socket = $server->getSocket();
-		$this->socket->addStream($this->inStream, $this->outStream, $active_session + 1, true);
-		$this->socket->addSocket($socket, $active_session + 1, true);
+		$this->socket->addStream($this->inStream, $this->outStream, $this->session, true);
+		$this->socket->addSocket($socket, $this->session, true);
+		$this->lastPacket = time();
 
 		$this->playerHandler = $player_handler;
 		$this->handleModules('__newPlayer', $this, $player_handler);
@@ -257,6 +263,42 @@ class Player extends \Server\Server {
 	public function getIP() {
 		socket_getpeername($this->connection, $ip, $port);
 		return array('ip' => $ip, 'port' => $port);
+	}
+
+	public function isUpdateRequired() {
+		return $this->updateRequired;
+	}
+
+	public function isChatUpdateRequired() {
+		return $this->chatUpdateRequired;
+	}
+
+	public function isAppearanceUpdateRequired() {
+		return $this->appearanceUpdateRequired;
+	}
+
+	public function getChatColor() {
+		return $this->chatColor;
+	}
+
+	public function getChatEffects() {
+		return $this->chatEffects;
+	}
+
+	public function getStaffRights() {
+		return $this->staffRights;
+	}
+
+	public function getChatText() {
+		return $this->chatText;
+	}
+
+	public function needsPlacement() {
+		return $this->needsPlacement;
+	}
+
+	public function isConnected() {
+		return $this->socket->read(1, $this->session) != '' ? true : false;
 	}
 }
 ?>

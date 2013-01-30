@@ -1,0 +1,97 @@
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] dongs has logged in from 127.0.0.1:34500
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34501
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34502
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34503
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34504
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34505
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34506
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34507
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34508
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34509
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34510
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34511
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34512
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34513
+[SERVER] Closing dongs's connection
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] dongs has logged in from 127.0.0.1:34516
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34517
+[SERVER] Closing dongs's connection
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] dongs has logged in from 127.0.0.1:34519
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34520
+[SERVER] Closing dongs's connection
+[SERVER] dongs has logged in from 127.0.0.1:34521
+[SERVER] Closing dongs's connection
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] dongs has logged in from 127.0.0.1:34525
+[SERVER] dongs has logged in from 127.0.0.1:34526
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] dongs has logged in from 127.0.0.1:34551
+[SERVER] 0
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] dongs has logged in from 127.0.0.1:34554
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] dongs has logged in from 127.0.0.1:34557
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] dongs has logged in from 127.0.0.1:34563
+[SERVER] dongs has logged in from 127.0.0.1:34616
+[SERVER] dongs has logged in from 127.0.0.1:34617

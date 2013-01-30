@@ -28,13 +28,13 @@ class PlayerUpdate extends \Server\Client\PlayerHandler {
 		$this->out->iniBitAccess();
 		
 		$this->updateLocalMovement();
-		//	if (player.isUpdateRequired()) {
-		//		PlayerUpdating.updateState(false, true);
-		//	}
+		if ($this->player->isUpdateRequired()) {
+			$this->updateState(false, true);
+		}
 		
 		$this->out->putBits(8, 0);
 		foreach($players as $plr) {
-			if(false) {
+			if(false == true) {
 				//	PlayerUpdating.updateOtherPlayerMovement(other, out);
 				//	if (other.isUpdateRequired()) {
 				//		PlayerUpdating.updateState(false, false);
@@ -70,31 +70,81 @@ class PlayerUpdate extends \Server\Client\PlayerHandler {
 		//needs to be written to the socket
 	}
 	
+	public function appendChat() {
+		$this->out->putShort((($this->player->getChatColor() & 0xff) << 8) + ($this->player->getChatEffects() & 0xff));
+		$this->out->putByte($this->player->getStaffRights());
+		$this->out->putByteC( strlen($this->player->getChatText()) );
+		$this->out->putBytesReverse($this->player->getChatText());
+	}
+
+	public function appendAppearance() {
+		$this->out->putByte(0); // Gender
+		$this->out->putByte(0); // Skull icon
+
+		$this->out->putByte(0); // Hat
+		$this->out->putByte(0); // Cape
+		$this->out->putByte(0); // Amulet
+		$this->out->putByte(0); // Weapon
+		$this->out->putByte(0); // Chest
+		$this->out->putByte(0); // Shield
+
+		$this->out->putShort(0x100 + 1); // Arms
+		$this->out->putShort(0x100 + 1); // Legs
+		$this->out->putShort(0x100 + 1); // Head
+		$this->out->putShort(0x100 + 1); // Hands
+		$this->out->putShort(0x100 + 1); // Feet
+		$this->out->putShort(0x100 + 1); // Beard
+
+		$this->out->putByte(1);
+		$this->out->putByte(1);
+		$this->out->putByte(1);
+		$this->out->putByte(1);
+		$this->out->putByte(1);
+		$this->out->putByte(1);
+
+		$this->out->putShort(0x328); // stand
+		$this->out->putShort(0x337); // stand turn
+		$this->out->putShort(0x333); // walk
+		$this->out->putShort(0x334); // turn 180
+		$this->out->putShort(0x335); // turn 90 cw
+		$this->out->putShort(0x336); // turn 90 ccw
+		$this->out->putShort(0x338); // run
+
+		$this->out->putLong(\Server\Misc::nameToLong($this->player->getUsername()));
+		$this->out->putByte(3); // Combat level.
+		$this->out->putShort(0); // Total level.
+
+		// Append the block length and the block to the packet.
+		$this->out->putByte($this->out->getCurrentOffset());
+		$this->out->putBytes($this->out->getStream());
+
+	}
+
 	public function updateState($forceAppearance, $noChat) {
 		$mask = 0x0;
 		
-		//	if (player.isChatUpdateRequired() && !noChat) {
-		//		mask |= 0x80;
-		//	}
-		//	if (player.isAppearanceUpdateRequired() || forceAppearance) {
-		//		mask |= 0x10;
-		//	}
+		if ($this->player->isChatUpdateRequired() && !$noChat) {
+			$mask |= 0x80;
+		}
+		if ($this->player->isAppearanceUpdateRequired() || $forceAppearance) {
+			$mask |= 0x10;
+		}
 		
 		// Now, we write the actual mask.
 		if ($mask >= 0x100) {
-		//	mask |= 0x40;
-		//	block.writeShort(mask, StreamBuffer.ByteOrder.LITTLE);
+			$mask |= 0x40;
+			$this->out->putShort($mask);
 		} else {
 			$this->out->putByte($mask);
 		}
 	
-		//	if (player.isChatUpdateRequired() && !noChat) {
-		//		appendChat(player, block);
-		//	}
+		if ($this->player->isChatUpdateRequired() && !$noChat) {
+			$this->appendChat();
+		}
 
-		//	if (player.isAppearanceUpdateRequired() || forceAppearance) {
-		//		appendAppearance(player, block);
-		//	}
+		if ($this->player->isAppearanceUpdateRequired() || $forceAppearance) {
+			$this->appendAppearance();
+		}
 	}
 	
 	public function addPlayer(\Server\Client\Player $other) {
@@ -108,8 +158,8 @@ class PlayerUpdate extends \Server\Client\PlayerHandler {
 	}
 	
 	public function updateLocalMovement() {
-		$updateRequired = false;
-		if(true) {
+		$updateRequired = $this->player->isUpdateRequired();
+		if($this->player->needsPlacement()) {
 			$this->out->putBit(true);
 			$x = 400;
 			$y = 400;
@@ -139,9 +189,20 @@ class PlayerUpdate extends \Server\Client\PlayerHandler {
 		$this->out->putBits(2,0);
 	}
 	
-	public function appendRun($primaryDirection, $secondaryDirection, $updateRequired) {}
+	public function appendRun($primaryDirection, $secondaryDirection, $updateRequired) {
+		$this->out->putBits(2, 2);
+
+		$this->out->putBits(3, $primaryDirection);
+		$this->out->putBits(3, $secondaryDirection);
+		$this->out->putBit($updateRequired);
+	}
 	
-	public function appendWalk($primaryDirection, $updateRequired) {}
+	public function appendWalk($primaryDirection, $updateRequired) {
+		$this->out->putBits(2, 1);
+
+		$this->out->putBits(3, $primaryDirection);
+		$this->out->putBit($updateRequired);
+	}
 	
 	public function appendPlacement($x, $y, $z, $discardMovementQueue, $attributesUpdate) {
 			$this->out->putBits(2, 3);
