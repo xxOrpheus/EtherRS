@@ -12,7 +12,7 @@ namespace Server;
  * @author David Harris <lolidunno@live.co.uk>
  * @copyright 2013 EtherRS
  * @version GIT: $Id:$
- * @link https://github.com/mitchellm/EtherRS/
+ * @link https://github.com/xxOrpheus/EtherRS/
  */
 
 chdir(__DIR__);
