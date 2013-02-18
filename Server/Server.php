@@ -1,9 +1,15 @@
 <?php
 namespace Server;
 /**
+ * A RuneScape private server made in PHP
+ * Contributors: Mitchell Murphy <mitchell@fl3x.co>
+ * 
+ * PHP 5
+ * 
+ * 
  * @category RSPS
  * @package EtherRS
- * @author David Harris <lolidunno@live.co.uk>, Mitchell Murphy <mitchell@fl3x.co>
+ * @author David Harris <lolidunno@live.co.uk>
  * @copyright 2013 EtherRS
  * @version GIT: $Id:$
  * @link https://github.com/mitchellm/EtherRS/
