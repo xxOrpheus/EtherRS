@@ -57,12 +57,20 @@ class PlayerHandler extends \Server\Server {
 				continue;
 			}
 
-			@socket_send($this->players[$x]->connection, " ", 1, MSG_OOB);
-			if(socket_last_error($this->players[$x]->connection) != 0) {
-				$this->active_sessions--;
-				$this->players[$x] = null;
-				unset($this->players[$x]);
-			}
+			/**
+			 * @socket_send($this->players[$x]->connection, " ", 1, MSG_OOB);
+			 * if(socket_last_error($this->players[$x]->connection) != 0) {
+			 *	$this->active_sessions--;
+			 *	$this->players[$x] = null;
+			 *	unset($this->players[$x]);
+			 * }
+			 */
+			 if(!$this->players[$x]->isConnected()) {
+			 	$this->active_sessions--;
+			 	$this->players[$x] = null;
+			 	unset($this->players[$x]);
+			 	$this->players = array_values($this->players);
+			 }
 		}
 	}
 
