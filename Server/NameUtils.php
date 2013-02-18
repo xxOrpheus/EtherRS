@@ -91,7 +91,7 @@ class NameUtils {
      */
     protected function fixName($s) {
         if (strlen($s) > 0) {
-            $ac = explode('', $s);
+            $ac = str_split($s);
 			$aclength = count($ac);
             for ($j = 0; $j < $aclength; $j++) {
                 if ($ac[$j] == '_') {
