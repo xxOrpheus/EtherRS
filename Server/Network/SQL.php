@@ -20,9 +20,9 @@ class SQL extends \Server\Server {
 	 *
 	 * Get the number of rows from a certain table based on column and value.
 	 *
-	 * @param  string $table   The table to select from -- Be careful, we can't properly parameterize these.
-	 * @param  array  $columns The column sto select with -- We can't parameterize these either!
-	 * @param  array  $values  The values we need.
+	 * @param  string $table   The table(s) to select from -- Be careful, we can't properly parameterize these.
+	 * @param  array  $columns The column(s) to select with -- We can't parameterize these either!
+	 * @param  array  $values  The value(s) we need.
 	 *
 	 * @return int
 	 *
@@ -85,7 +85,7 @@ class SQL extends \Server\Server {
 			}
 			$sql = substr($sql, 0, -2);
 			$sql .= ')';
-			var_dump($sql);
+			//var_dump($sql);
 			$query = $this->conn->prepare($sql);
 			$exec = $query->execute($values);
 			return $exec == true ? 1 : -1;
@@ -94,7 +94,35 @@ class SQL extends \Server\Server {
 			return -1;
 		}
 	}
-
+	
+	/**
+	 * 
+	 * Select data from a table
+	 * $table and $row cannot be parameterized, so do not allow user input into this function.
+	 * 
+	 * @param $table The table name
+	 * @param $row   The row
+	 * @param $value The value
+	 * 
+	 * @return mixed
+	 * 
+	 */
+	public function select($table, $row, $value) {
+	    try {
+	        if(empty($table) || empty($row) || empty($value)) {
+	            $this->log(__METHOD__ . ': You must fill in all fields.');
+	            return false;
+	        }
+		    $query = $this->conn->prepare('SELECT * FROM `' . $table . '` WHERE `' . $row . '` = ?'); // ??? is this bad. this seems bad.
+		    $query->execute($value);
+		    if(!$query) {
+			    return false;
+	    	}
+	    	return $query->fetchAll(\PDO::FETCH_ASSOC);
+	    } catch(\PDOException $e) {
+	        $this->log('Fatal SQL error: ' . $e->getTraceAsString());
+	    }
+	}
 	/**
 	 *
 	 * Get the PDO instance
