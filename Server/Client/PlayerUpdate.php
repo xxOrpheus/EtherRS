@@ -35,10 +35,10 @@ class PlayerUpdate extends \Server\Client\PlayerHandler {
 		$this->out->putBits(8, 0);
 		foreach($players as $plr) {
 			if(false == true) {
-				//	PlayerUpdating.updateOtherPlayerMovement(other, out);
-				//	if (other.isUpdateRequired()) {
-				//		PlayerUpdating.updateState(false, false);
-				//	}
+				PlayerUpdating.updateOtherPlayerMovement(other, out);
+				if ($plr->isUpdateRequired()) {
+					PlayerUpdating.updateState(false, false);
+				}
 			} else {
 				$this->out->putBit(true);
 				$this->out->putBits(2, 3);
@@ -78,7 +78,7 @@ class PlayerUpdate extends \Server\Client\PlayerHandler {
 	}
 
 	public function appendAppearance() {
-		$this->out->putByte(0); // Gender
+		$this->out->putByte($this->player->getGender()); // Gender (0 = male, 1 = female) ??
 		$this->out->putByte(0); // Skull icon
 
 		$this->out->putByte(0); // Hat
@@ -95,6 +95,7 @@ class PlayerUpdate extends \Server\Client\PlayerHandler {
 		$this->out->putShort(0x100 + 1); // Feet
 		$this->out->putShort(0x100 + 1); // Beard
 
+		// called the "color loop". what are colors? 
 		$this->out->putByte(1);
 		$this->out->putByte(1);
 		$this->out->putByte(1);
@@ -102,7 +103,8 @@ class PlayerUpdate extends \Server\Client\PlayerHandler {
 		$this->out->putByte(1);
 		$this->out->putByte(1);
 
-		$this->out->putShort(0x328); // stand
+		// the animation indicies
+		$this->out->putShort($this->player->getAnims('stand')); // stand
 		$this->out->putShort(0x337); // stand turn
 		$this->out->putShort(0x333); // walk
 		$this->out->putShort(0x334); // turn 180
@@ -111,8 +113,8 @@ class PlayerUpdate extends \Server\Client\PlayerHandler {
 		$this->out->putShort(0x338); // run
 
 		$this->out->putLong(\Server\Misc::nameToLong($this->player->getUsername()));
-		$this->out->putByte(3); // Combat level.
-		$this->out->putShort(0); // Total level.
+		$this->out->putByte($this->player->getCombatLevel()); // Combat level.
+		$this->out->putShort($this->player->getTotalLevel()); // Total level.
 
 		// Append the block length and the block to the packet.
 		$this->out->putByte($this->out->getCurrentOffset());
