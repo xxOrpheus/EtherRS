@@ -24,6 +24,7 @@ class Player extends \Server\Server {
 	public $updateRequired = true, $chatUpdateRequired = true, $appearanceUpdateRequired = true, $needsPlacement = true, $resetMovementQueue = true;
 	public $staffRights = 0, $chatColor, $chatEffects, $chatText;
 	public $appearance, $colors, $inventory, $inventoryN, $skills, $experience, $equipment, $equipmentN;
+	protected $gender = 0, $playerLooks = array();
 
 
 	protected $socket;
@@ -209,6 +210,35 @@ class Player extends \Server\Server {
 		//$this->server->playerHandler->update($this, $this->outStream, $this->getEncryptor());
 		
 		$this->server->handleModules('__onLogin', $this);
+	}
+
+	public function setGender($gender = 0) {
+		$this->gender = $gender < 1 ? 0 : 1;
+		$this->server->handleModules('genderChanged', $this);
+	}
+
+	public function getGender() {
+		return $this->gender;
+	}
+	
+	public function setPlayerLooks(array $looks) {
+		if(count($looks) < 6) {
+			return false;
+		}
+		
+		
+	}
+	
+	public function getPlayerLooks() {
+		return $this->playerLooks;
+	}
+
+	public function getCombatLevel() {
+		return 3;
+	}
+	
+	public function getTotalLevel() {
+		return 0;
 	}
 
 	public function getOutstream() {
