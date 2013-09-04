@@ -46,10 +46,10 @@ class PlayerUpdate extends \Server\Client\PlayerHandler {
 		}
 		
 		for($i = 0; $i < count($players); $i++) {
-			//	if (player.getPlayers().size() >= 255) {
-			//		// Player limit has been reached.
-			//		break;
-			//	}
+			if ($i >= 255) {
+				//Player limit has been reached.
+				break;
+			}
 			$other = $players[$i];
 			if($other == null || $other == $player)
 				continue;
@@ -124,6 +124,22 @@ class PlayerUpdate extends \Server\Client\PlayerHandler {
 
 	public function updateState($forceAppearance, $noChat) {
 		$mask = 0x0;
+		/**
+		 * 
+		 * Update masks:
+		 * 
+		 * 0x400: Makes the player appear to be walking while animating.
+		 * 0x8:   For animations
+		 * 0x4:   Player text above head
+		 * 0x80:  Normal player text
+		 * 0x1:   The player's current interacting entity.
+		 * 0x10:  Player appearance updating
+		 * 0x2:   The current player direction that they're facing.
+		 * 0x20:  Hit update.
+		 * 0x200: Hit update. Most likely associated with special attacking.
+		 * 
+		 */
+		 
 		
 		if ($this->player->isChatUpdateRequired() && !$noChat) {
 			$mask |= 0x80;
