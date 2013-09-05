@@ -14,6 +14,7 @@ namespace Server;
 * @version GIT: $Id:$
 * @link https://github.com/xxOrpheus/EtherRS/
 */
+
 class NameUtils {
 	/**
 	 * Name utility class.
