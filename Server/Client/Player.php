@@ -244,6 +244,10 @@ class Player extends \Server\Server {
 		return isset($this->anims[$anim]) ? $this->anims[$anim] : false;
 	}
 	
+	public function getAnims() {
+		return $this->anims;
+	}
+	
 	public function setPlayerLooks(array $looks) {
 		if(count($looks) < 6) {
 			return false;
