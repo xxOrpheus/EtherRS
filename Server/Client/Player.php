@@ -225,8 +225,9 @@ class Player extends \Server\Server {
 		if(count($looks) < 6) {
 			return false;
 		}
-		
-		
+		$looks = array_map('intval', $looks);
+		$this->playerLooks = $looks;
+		$this->server->handleModules('looksChanged', $this);
 	}
 	
 	public function getPlayerLooks() {
