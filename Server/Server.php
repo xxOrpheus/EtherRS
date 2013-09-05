@@ -51,7 +51,7 @@ class Server {
 		
 		$this->playerHandler = new Client\PlayerHandler();
 		$this->sql = new Network\SQL();
-		$this->IO = new IO();
+		$this->IO = new \Server\IO();
 		$this->socket = new Network\Socket();
 
 		$this->loadModules();
