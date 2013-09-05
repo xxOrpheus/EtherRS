@@ -24,11 +24,12 @@ require 'Client/Player.php';
 require 'Network/SQL.php';
 require 'Network/Socket.php';
 require 'Network/Stream.php';
+require 'IO.php';
 require 'Misc.php';
 
 class Server {
 	protected $server, $bytes, $raw;
-	protected $sql;
+	protected $useSQL = true, $sql, $IO;
 
 	protected $playerHandler, $player, $socket;
 
@@ -50,6 +51,7 @@ class Server {
 		
 		$this->playerHandler = new Client\PlayerHandler();
 		$this->sql = new Network\SQL();
+		$this->IO = new IO();
 		$this->socket = new Network\Socket();
 
 		$this->loadModules();
