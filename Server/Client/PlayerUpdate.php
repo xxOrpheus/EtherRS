@@ -95,7 +95,7 @@ class PlayerUpdate extends \Server\Client\PlayerHandler {
 		$this->out->putShort(0x100 + 1); // Feet
 		$this->out->putShort(0x100 + 1); // Beard
 
-		// called the "color loop". what are colors? 
+		// called the "color loop". what are colors? possibly related to player looks. maybe clothes
 		$this->out->putByte(1);
 		$this->out->putByte(1);
 		$this->out->putByte(1);
@@ -105,12 +105,12 @@ class PlayerUpdate extends \Server\Client\PlayerHandler {
 
 		// the animation indicies
 		$this->out->putShort($this->player->getAnims('stand')); // stand
-		$this->out->putShort(0x337); // stand turn
-		$this->out->putShort(0x333); // walk
-		$this->out->putShort(0x334); // turn 180
-		$this->out->putShort(0x335); // turn 90 cw
-		$this->out->putShort(0x336); // turn 90 ccw
-		$this->out->putShort(0x338); // run
+		$this->out->putShort($this->player->getAnims('standTurn')); // stand turn
+		$this->out->putShort($this->player->getAnims('walk')); // walk
+		$this->out->putShort($this->player->getAnims('turn180')); // turn 180
+		$this->out->putShort($this->player->getAnims('turn90CW')); // turn 90 cw
+		$this->out->putShort($this->player->getAnims('turn90CCW')); // turn 90 ccw
+		$this->out->putShort($this->player->getAnims('run')); // run
 
 		$this->out->putLong(\Server\Misc::nameToLong($this->player->getUsername()));
 		$this->out->putByte($this->player->getCombatLevel()); // Combat level.
