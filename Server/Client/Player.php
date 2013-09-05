@@ -25,6 +25,15 @@ class Player extends \Server\Server {
 	public $staffRights = 0, $chatColor, $chatEffects, $chatText;
 	public $appearance, $colors, $inventory, $inventoryN, $skills, $experience, $equipment, $equipmentN;
 	protected $gender = 0, $playerLooks = array();
+	protected $anims = array(
+		'stand'     => 0x328,
+    	'standTurn' => 0x337,
+    	'walk'      => 0x333,
+     	'turn180'   => 0x334,
+    	'turn90CW'  => 0x335,
+        'turn90CCW' => 0x336,
+		'run'       => 0x338
+	);
 
 
 	protected $socket;
@@ -219,6 +228,20 @@ class Player extends \Server\Server {
 
 	public function getGender() {
 		return $this->gender;
+	}
+	
+	public function setAnim($anim, $value) {
+		if(isset($this->anims[$anim])) {
+			this->anims[$anim] = $value;
+		} else {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public function getAnim($anim) {
+		return isset($this->anims[$anim]) ? $this->anims[$anim] : false;
 	}
 	
 	public function setPlayerLooks(array $looks) {
