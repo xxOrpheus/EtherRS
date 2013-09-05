@@ -170,8 +170,12 @@ class Player extends \Server\Server {
 			$response = 2;
 		} else {
 			//$response = 3;
-			$created = $this->sql->insert('players', array('username', 'password'), array($this->getUsername(), $this->getPassword()));
-			if($created == 1) {
+			if($this->server->useSQL) {
+				$created = $this->sql->insert('players', array('username', 'password'), array($this->getUsername(), $this->getPassword()));
+			} else {
+				$created = $this->server->IO->create('data/players/' . $this->getUsername . '.json');
+			}
+			if($created == true) {
 				$response = 2;
 			} else {
 				$response = 3;
