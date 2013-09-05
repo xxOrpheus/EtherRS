@@ -27,11 +27,11 @@ class Player extends \Server\Server {
 	protected $gender = 0, $playerLooks = array();
 	protected $anims = array(
 		'stand'     => 0x328,
-    	'standTurn' => 0x337,
-    	'walk'      => 0x333,
-     	'turn180'   => 0x334,
-    	'turn90CW'  => 0x335,
-        'turn90CCW' => 0x336,
+    		'standTurn' => 0x337,
+    		'walk'      => 0x333,
+     		'turn180'   => 0x334,
+    		'turn90CW'  => 0x335,
+        	'turn90CCW' => 0x336,
 		'run'       => 0x338
 	);
 
