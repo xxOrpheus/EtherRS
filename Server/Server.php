@@ -124,9 +124,9 @@ class Server {
 			$cycleStart = time();
 
 			$this->cycle();
-			$cycleElapsed = time() - $cycleStart;
+			$deltaTime = time() - $cycleStart;
 
-			usleep((CYCLE_TIME * 1000) - $cycleElapsed);
+			usleep((CYCLE_TIME * 1000) - $deltaTime);
 		}
 	}
 
