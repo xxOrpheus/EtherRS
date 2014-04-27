@@ -1,0 +1,62 @@
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+2SQLSTATE[HY000] [1049] Unknown database 'etherrs'
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] 
+[SERVER] Expected login Id 14 from client.
+[SERVER] 
+[SERVER] Expected login Id 14 from client.
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] 
+[SERVER] Expected login Id 14 from client, got 0.
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] 
+[SERVER] Expected login Id 14 from client, got 0.
+[SERVER] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'etherrs.players' doesn't exist
+[SERVER] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'etherrs.players' doesn't exist
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'etherrs.players' doesn't exist
+[SERVER] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'etherrs.players' doesn't exist
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] 
+[SERVER] Expected login Id 14 from client, got 0.
+[SERVER] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'etherrs.players' doesn't exist
+[SERVER] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'etherrs.players' doesn't exist
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'etherrs.players' doesn't exist
+[SERVER] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'etherrs.players' doesn't exist
+[SERVER] EtherRS running...
+[SERVER] Attempting to bind and listen on port 43594...
+[SERVER] SQL connection initialized
+[SERVER] Socket server initialized
+[SERVER] Finished loading all server modules, the server will continue running!
+[SERVER] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'etherrs.players' doesn't exist
+[SERVER] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'etherrs.players' doesn't exist
+[SERVER] a has logged in from 127.0.0.1:55213

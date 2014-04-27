@@ -27,11 +27,11 @@ class Player extends \Server\Server {
 	protected $gender = 0, $playerLooks = array();
 	protected $anims = array(
 		'stand'     => 0x328,
-    		'standTurn' => 0x337,
-    		'walk'      => 0x333,
-     		'turn180'   => 0x334,
-    		'turn90CW'  => 0x335,
-        	'turn90CCW' => 0x336,
+    	'standTurn' => 0x337,
+    	'walk'      => 0x333,
+     	'turn180'   => 0x334,
+    	'turn90CW'  => 0x335,
+        'turn90CCW' => 0x336,
 		'run'       => 0x338
 	);
 
@@ -69,9 +69,9 @@ class Player extends \Server\Server {
 		$serverHalf = ((((mt_rand(1, 100)/100) * 99999999) << 32) + ((mt_rand(1, 100)/100) * 99999999));
 		$data = $this->socket->read(2);
 		$this->inStream->setStream($data);
-
-		if($this->inStream->getUnsignedByte() != 14) {
-			$this->log("Expected login Id 14 from client.");
+		$loginId = $this->inStream->getUnsignedByte();
+		if($loginId != 14) {
+			$this->log("Expected login Id 14 from client, got " . ((int)$loginId) . ".");
 			return;
 		}
 
@@ -236,7 +236,7 @@ class Player extends \Server\Server {
 	
 	public function setAnim($anim, $value) {
 		if(isset($this->anims[$anim])) {
-			this->anims[$anim] = $value;
+			$this->anims[$anim] = $value;
 		} else {
 			return false;
 		}

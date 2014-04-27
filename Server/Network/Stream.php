@@ -175,13 +175,13 @@ Class Stream {
     }
 
     public function putShort($i) {
-        $this->array[$this->currentOffset++] = $this->toByte($i >> 8);
-        $this->array[$this->currentOffset++] = $this->toByte($i);
+        $this->array[$this->currentOffset++] = $i >> 8;
+        $this->array[$this->currentOffset++] = $i;
         return $this;
     }
 
     public function toByte($val) {
-        return ((($val+128) % 256) - 128);
+        return ( ( ($val + 128) % 256) - 128 );
     }
 
     public function setCurrentOffset($offset) {
